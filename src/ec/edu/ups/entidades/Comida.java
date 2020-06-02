@@ -4,6 +4,8 @@ import java.io.Serializable;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 @Entity
 public class Comida implements Serializable{
 	private static final long serialVersionUID =1;
@@ -11,7 +13,10 @@ public class Comida implements Serializable{
 	private int codigo;
 	private String nombre;
 	private double precioUnitario;
-	
+	@ManyToOne
+	@JoinColumn
+	private Pedido pedido;
+
 	public Comida() {
 		
 	}

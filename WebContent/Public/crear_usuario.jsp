@@ -80,13 +80,13 @@
 					<hr>
 
 					<label for="cedula"><b>Numero : &nbsp;&nbsp; </b></label> 
-					<input id="cedulaID" type="text" placeholder="Ingresar cedula" name="numero" onkeypress="ValidarNumeros(event, 'mensajeCedula', this)" required> <span id="mensajeCedula"></span> 
+					<input id="cedulaID" type="text" placeholder="Ingresar cedula" name="numero"  required> <span id="mensajeCedula"></span> 
 					<br>
 					<label for="nombres"><b>Fecha :</b></label>
-					<input id="nombresID" type="text" placeholder="Ingresar nombres" name="fecha" onkeypress="ValidarLetras(event, 'mensajeNombres', this)" required><span id="mensajeNombres"></span> 
+					<input id="nombresID" type="text" placeholder="Ingresar nombres" name="fecha"  required><span id="mensajeNombres"></span> 
 					<br>
 					<label for="apellidos"><b>Cliente :</b></label> 
-					<input id="apellidosID" type="text" placeholder="Ingresar apellidos" name="cliente"  onkeypress="ValidarLetras(event, 'mensajeApellidos', this)" required><span id="mensajeApellidos"></span>
+					<input id="apellidosID" type="text" placeholder="Ingresar apellidos" name="cliente"   required><span id="mensajeApellidos"></span>
 					<br>
 					<label for="email"><b>Total : &nbsp;&nbsp;&nbsp;&nbsp;</b></label> 
 					<input id="emailID" type="text" placeholder="Ingresar email" name="total" required><span id="mensajeCorreo"></span> 

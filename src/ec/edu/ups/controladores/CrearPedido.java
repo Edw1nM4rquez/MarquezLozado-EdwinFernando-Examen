@@ -47,10 +47,10 @@ public class CrearPedido extends HttpServlet {
 		String cliente = "";
 		String total="";
 		String observacion ="";
-		
-		Pedido ped = new Pedido();
-		
+				
 		String accion = request.getParameter("registrarUsr");
+		
+		Pedido ped=new Pedido();
 	//	UsuarioDAO usuarioDao = DAOFactory.getFactory().getUsuarioDAO();
 		PedidoDAO pedao = DAOFactory.getFactory().getPedidoDAO();
 		
@@ -64,19 +64,12 @@ public class CrearPedido extends HttpServlet {
 			
 			System.out.print("Numero pedido: "+numero);
 			
-			Pedido = new Pedido(Integer.parseInt(numero), fecha, cliente, total, observacion);
+			Pedido pedi= new Pedido(Integer.parseInt(numero), fecha, cliente, Double.parseDouble(total), observacion);
 			
-			if (users.buscarCorreo(correo).size()==0) {
-				users.create(user);
-				getServletContext().getRequestDispatcher("/Public/login.jsp").forward(request, response);
-				
-			}else {
-				request.setAttribute("mensaje", "El correo ya existe");
-				request.setAttribute("usuario", user);
-				
-				getServletContext().getRequestDispatcher("/Public/crear_usuario.jsp").forward(request, response);
-				
-			}
+			getServletContext().getRequestDispatcher("/Public/index.jsp").forward(request, response);
+			
+				pedao.create(pedi);
+		}
 			
 		
 	}
